@@ -6,4 +6,5 @@ Aplicando conhecimentos com :
  - lógica de programação. 
  - if / else 
  - switch 
+ - -funções
  - operadores ternários.
