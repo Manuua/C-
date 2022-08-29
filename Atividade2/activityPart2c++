@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+const double juros = 0.02;
+const double jurosDia = 0.01;
+
+// Object class/interface:
+class BillsClass {
+   int diasAtrasados;
+   double valorInicial;
+   double total;
+
+  public:
+   // Object functions:
+   void lerDados();
+   double calcularJuros();
+   void showResult();
+};
+
+// Subroutines:
+void BillsClass::lerDados() {
+   system("cls");
+   cout << "Digite valor da prestação: ";
+   cin >> valorInicial;
+   cout << "Quanots dias atrasados: ";
+   cin >> diasAtrasados;
+  
+}
+double BillsClass::calcularJuros() {
+   total = valorInicial;
+   double monthlyjuros = (juros *  diasAtrasados / 30);
+
+   if  (diasAtrasados >= 30) {
+      total += (valorInicial * monthlyjuros) + (valorInicial * jurosDia);
+   } else if (diasAtrasados != 0) {
+      total += (valorInicial * juros);
+   }
+   return total;
+}
+void BillsClass::showResult() {
+   cout << "Initial value: " << valorInicial << endl;
+   cout << "Delay days: " << diasAtrasados << endl;
+   cout << "Total value: " << total << endl;
+  
+}
+
+// ------------
+int main() {
+   
+   BillsClass array[] = {};
+
+
+   array[0].lerDados();
+   array[0].calcularJuros();
+
+  
+   array[0].showResult();
+}
